@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block second_menu %}
+    <div class="cloth_menu">
+    <a href="/cloth/jackets/">Jackets</a>
+    <a href="#">Jeans</a>
+    <a href="#">Dress</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="main_content">
+        <h1 class="main_h1">Clothes</h1>
+        <img src="{{ url_for('static', filename='clothes.jpg') }}" class="main_img" alt="welcome" width="600" height="500">
+    </div>
+{% endblock %}

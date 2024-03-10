@@ -1,0 +1,27 @@
+{% extends 'cloth.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block second_menu %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="main_content">
+    <h1 class="main_h1">Jackets</h1>
+    <img src="{{ url_for('static', filename='jackets.jpg') }}" class="main_img" alt="welcome" width="600" height="500">
+</div>
+
+{% for jacket in jackets %}
+
+<div class="jackets_items">
+    <h2 class="items"><a href="#">{{ jacket.name.capitalize() }}</a></h2>
+    <img src="{{ jacket.image }}" alt="{{ jacket.name }}" width="300" height="300">
+    <p class="text">{{ jacket.text }}</p>
+</div>
+{% endfor %}
+
+
+{% endblock %}
